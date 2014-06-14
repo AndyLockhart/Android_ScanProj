@@ -27,8 +27,8 @@
             android:label="@string/title_activity_video" >
         </activity>
         <activity
-            android:name="com.example.videoscan.ScanActivity"
-            android:label="@string/title_activity_scan" >
+            android:name="com.zxing.activity.CaptureActivity"
+            android:label="@string/title_activity_capture" >
         </activity>
     </application>
     

@@ -1,9 +1,10 @@
 package com.example.videoscan;
 
+import com.zxing.activity.CaptureActivity;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -24,7 +25,7 @@ public class MainActivity extends Activity {
 		btnScan.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 			Intent intent = new Intent();
-				intent.setClass(MainActivity.this, ScanActivity.class);
+				intent.setClass(MainActivity.this, CaptureActivity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
 			}
