@@ -7,12 +7,8 @@ import android.app.Activity;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-/**
- * @author AndyLockhart
- * 
- */
 public class VideoActivity extends Activity {
-	private FullScreenVideoView mVideoView;
+	private VideoView mVideoView;
 	private MediaController mController;
 
 	@Override
@@ -23,7 +19,7 @@ public class VideoActivity extends Activity {
 		Bundle bundle = getIntent().getExtras();
 		String strUrl = bundle.getString("url");
 		//使用Controller控制VideoView进行视频播放
-		mVideoView = (FullScreenVideoView) findViewById(R.id.vv_scan);
+		mVideoView = (VideoView) findViewById(R.id.vv_scan);
 		mController = new MediaController(this);
 		File file = new File(strUrl);
 		if (file.exists()) {

@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package com.example.videoscan;
+
+import android.content.Context;
+import android.widget.VideoView;
+
+/**
+ * @author AndyLockhart
+ *
+ */
+public class FullScreenVideoView extends VideoView {
+
+	public FullScreenVideoView(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+
+}

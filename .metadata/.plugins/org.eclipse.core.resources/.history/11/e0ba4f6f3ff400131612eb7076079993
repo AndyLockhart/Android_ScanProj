@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.example.videoscan;
+
+import android.widget.VideoView;
+
+/**
+ * @author AndyLockhart
+ *
+ */
+public class FullScreenVideoView extends VideoView {
+
+}
