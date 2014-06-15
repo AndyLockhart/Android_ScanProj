@@ -36,9 +36,7 @@ Icon
 .Spotlight-V100
 .Trashes
 
-.metadata/.lock
-.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
-.metadata/.plugins/org.eclipse.cdt.make.core/specs.cpp
-.metadata/.plugins/org.eclipse.core.resources/.projects/VideoScan/.indexes/a0/5f/properties.index
-.metadata/.plugins/org.eclipse.core.resources/.projects/VideoScan/.indexes/a0/62/properties.index
-.metadata/.plugins/org.eclipse.core.resources/.projects/VideoScan/.indexes/a0/66/properties.index
+.metadata/*.*
+VideoScan/.classpath
+VideoScan/.project
+VideoScan/.settings/*.*
