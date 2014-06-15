@@ -4,11 +4,7 @@ import java.io.File;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.MediaController;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 public class VideoActivity extends Activity {
@@ -22,9 +18,8 @@ public class VideoActivity extends Activity {
 
 		Bundle bundle = getIntent().getExtras();
 		String strUrl = bundle.getString("url");
-
+		//使用Controller控制VideoView进行视频播放
 		mVideoView = (VideoView) findViewById(R.id.vv_scan);
-		// 实例化MediaController
 		mController = new MediaController(this);
 		File file = new File(strUrl);
 		if (file.exists()) {
@@ -33,19 +28,6 @@ public class VideoActivity extends Activity {
 			mController.setMediaPlayer(mVideoView);
 			// 自动开始
 			mVideoView.start();
-
-			mController.setPrevNextListeners(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Toast.makeText(VideoActivity.this, "下一个", 0).show();
-				}
-			}, new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					Toast.makeText(VideoActivity.this, "上一个", 0).show();
-				}
-			});
 		}
 	}
 }

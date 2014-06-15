@@ -19,15 +19,15 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		// 点击按钮跳转到二维码扫描界面，这里用的是startActivityForResult跳转
-		// 扫描完了之后调到该界面
+		// startActivityForResult跳转，以接受CaptureActivity回调时传的参数
 		Button btnScan = (Button) findViewById(R.id.btn_Scan);
 		btnScan.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-			Intent intent = new Intent();
-				intent.setClass(MainActivity.this, CaptureActivity.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
+//			Intent intent = new Intent();
+//				intent.setClass(MainActivity.this, CaptureActivity.class);
+//				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//				startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
+				startVideo("sdcard/video/test.flv");
 			}
 		});
 	}
@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
 	@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+    	//回调结果处理
         switch (requestCode) {
 		case SCANNIN_GREQUEST_CODE:
 			if(resultCode == RESULT_OK){
@@ -49,6 +50,7 @@ public class MainActivity extends Activity {
 	
 	private void startVideo(String strUrl)
 	{
+		//跳转至VideoActivity播放URI视频
 		Intent it = new Intent(MainActivity.this,  VideoActivity.class);
 		Bundle bundle=new Bundle();
 		bundle.putString("url", strUrl);
